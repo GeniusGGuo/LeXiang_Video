@@ -15,7 +15,7 @@ import java.io.IOException;
 
 /**
  * @ClassName AccessDeniedHandlerImpl
- * @Description TODO
+ * @Description   没有权限访问时，返回的json数据
  * @Author 小果
  * @Date 2024/6/14 23:03
  * @Version 1.0

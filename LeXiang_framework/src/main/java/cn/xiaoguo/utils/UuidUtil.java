@@ -2,7 +2,7 @@ package cn.xiaoguo.utils;
 
 /**
  * @ClassName UuidUtil
- * @Description TODO
+ * @Description
  * @Author 小果
  * @Date 2024/6/8 22:40
  * @Version 1.0

@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * @ClassName ResponseRult
- * @Description TODO
+ * @Description   返回结果实体类
  * @Author 小果
  * @Date 2024/6/7 17:37
  * @Version 1.0

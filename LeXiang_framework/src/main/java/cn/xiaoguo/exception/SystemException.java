@@ -4,7 +4,7 @@ import cn.xiaoguo.enums.AppHttpCodeEnum;
 
 /**
  * @ClassName SystemException
- * @Description TODO
+ * @Description   系统异常
  * @Author 小果
  * @Date 2024/6/7 17:43
  * @Version 1.0

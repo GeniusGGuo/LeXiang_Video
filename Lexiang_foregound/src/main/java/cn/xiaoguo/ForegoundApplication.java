@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 
 /**
  * @ClassName ForegoundApplication
- * @Description TODO
+ * @Description  启动类
  * @Author 小果
  * @Date 2024/6/7 16:29
  * @Version 1.0

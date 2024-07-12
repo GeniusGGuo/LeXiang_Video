@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @ClassName WebConfig
- * @Description TODO
+ * @Description 跨域配置
  * @Author 小果
  * @Date 2024/6/11 16:35
  * @Version 1.0

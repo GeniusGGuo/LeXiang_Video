@@ -2,7 +2,7 @@ package cn.xiaoguo.utils;
 
 /**
  * @ClassName JWTUtils
- * @Description TODO
+ * @Description     生成jwt工具类
  * @Author 小果
  * @Date 2024/6/7 19:03
  * @Version 1.0

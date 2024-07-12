@@ -2,7 +2,7 @@ package cn.xiaoguo.constant;
 
 /**
  * @ClassName SystemConstants
- * @Description TODO
+ * @Description   系统常量
  * @Author 小果
  * @Date 2024/6/24 11:10
  * @Version 1.0

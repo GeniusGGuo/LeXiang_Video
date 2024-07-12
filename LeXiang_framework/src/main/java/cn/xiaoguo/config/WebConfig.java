@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * @ClassName WebConfig
- * @Description TODO
+ * @Description  跨域配置
  * @Author 小果
  * @Date 2024/6/17 11:18
  * @Version 1.0

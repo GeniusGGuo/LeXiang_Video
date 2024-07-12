@@ -2,7 +2,7 @@ package cn.xiaoguo.enums;
 
 /**
  * @ClassName AppHttpCodeEnum
- * @Description TODO
+ * @Description  http状态码枚举类
  * @Author 小果
  * @Date 2024/6/7 17:39
  * @Version 1.0

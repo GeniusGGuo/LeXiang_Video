@@ -27,7 +27,7 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * @ClassName SecurityConfig
- * @Description TODO
+ * @Description 配置类
  * @Author 小果
  * @Date 2024/6/7 19:16
  * @Version 1.0

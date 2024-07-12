@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 /**
  * @ClassName RedisCache
- * @Description TODO
+ * @Description     缓存工具类
  * @Author 小果
  * @Date 2024/6/7 19:05
  * @Version 1.0

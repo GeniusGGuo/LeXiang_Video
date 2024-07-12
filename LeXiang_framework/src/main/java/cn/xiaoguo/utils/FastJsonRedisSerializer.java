@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 
 /**
  * @ClassName FastJsonRedisSerializer
- * @Description TODO
+ * @Description    Redis序列化工具类
  * @Author 小果
  * @Date 2024/6/7 17:29
  * @Version 1.0

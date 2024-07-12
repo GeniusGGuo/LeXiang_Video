@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @ClassName MybatisPlusConfig
- * @Description TODO
+ * @Description 配置MybatisPlus分页插件
  * @Author 小果
  * @Date 2024/6/17 11:19
  * @Version 1.0

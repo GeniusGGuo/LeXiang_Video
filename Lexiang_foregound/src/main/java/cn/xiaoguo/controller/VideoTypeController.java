@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * @ClassName VideoTypeController
- * @Description TODO
+ * @Description 视频类型控制层
  * @Author 小果
  * @Date 2024/6/24 11:00
  * @Version 1.0

@@ -10,7 +10,7 @@ import java.util.Collection;
 
 /**
  * @ClassName LoginUser
- * @Description TODO
+ * @Description   登录用户
  * @Author 小果
  * @Date 2024/6/7 19:14
  * @Version 1.0

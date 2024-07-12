@@ -9,7 +9,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @ClassName RedisConfig
- * @Description TODO
+ * @Description  Redis配置类
  * @Author 小果
  * @Date 2024/6/7 19:02
  * @Version 1.0

@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  * @ClassName AuthenticationEntryPointImpl
- * @Description TODO
+ * @Description     认证入口
  * @Author 小果
  * @Date 2024/6/17 11:10
  * @Version 1.0
