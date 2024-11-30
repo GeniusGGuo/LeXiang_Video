@@ -3,7 +3,7 @@ package cn.xiaoguo.config;
 import cn.xiaoguo.filter.JwtAuthenticationTokenFilter;
 import cn.xiaoguo.handler.security.AccessDeniedHandlerImpl;
 import cn.xiaoguo.handler.security.AuthenticationEntryPointImpl;
-import cn.xiaoguo.service.impl.UserDetailsServiceImpl;
+import cn.xiaoguo.service.impl.user.UserDetailsServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,8 +19,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.util.matcher.AndRequestMatcher;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -61,7 +59,7 @@ public class SecurityConfig {
                     // 放开登录注册接口
                     authorize.requestMatchers("/user/login","/user/register").anonymous();
                    //放开分类查询接口
-                    authorize.requestMatchers("/videoType/**").anonymous();
+                    authorize.requestMatchers("/videoType/**","/crawler/**","/videoInfo/**").anonymous();
                     // 其他的都需要认证
                     authorize.anyRequest().authenticated();
                 })

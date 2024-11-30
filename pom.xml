@@ -38,6 +38,18 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.33</version>
             </dependency>
+            <!--rabbitMQ-->
+            <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.20.0</version>
+        </dependency>
+            <!-- Jsoup for HTML parsing -->
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>1.14.3</version>
+            </dependency>
             <!--JWT-->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
@@ -55,6 +67,24 @@
                 <artifactId>jjwt-jackson</artifactId>
                 <version>0.11.0</version>
                 <scope>runtime</scope>
+            </dependency>
+            <!--httpclient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.5.13</version> <!-- 请检查是否有更新的版本 -->
+            </dependency>
+            <!--minio OSS-->
+            <!-- MinIO 客户端 -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>8.5.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.11</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

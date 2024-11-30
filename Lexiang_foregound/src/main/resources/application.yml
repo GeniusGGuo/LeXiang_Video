@@ -1,11 +1,25 @@
 server:
   port: 8888
 spring:
+  main:
+    allow-circular-references: true
   datasource:
     url: jdbc:mysql://localhost:3306/lexiang_video?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+  rabbitmq:
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 30 # 每次最多消费消息
+    host: 192.168.66.6
+    port: 5672
+    username: guest
+    password: 123456
+    virtual-host: /
+    publisher-confirm-type: correlated # 交换机的确认
+    publisher-returns: true # 队列的确认
 mybatis-plus:
   configuration:
     # 日志
@@ -15,5 +29,10 @@ mybatis-plus:
       logic-delete-field: delFlag
       logic-delete-value: 1
       logic-not-delete-value: 0
-      id-type: assign_id
+      id-type: none
   type-aliases-package: cn.xiaoguo.mapper
+minio:
+  endpoint: http://192.168.66.6:8001 #Minio服务所在地址
+  bucketName: lexiang-video #存储桶名称
+  accessKey: admin #访问的key
+  secretKey: admin123 #访问的秘钥

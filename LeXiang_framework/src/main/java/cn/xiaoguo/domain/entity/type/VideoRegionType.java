@@ -1,4 +1,4 @@
-package cn.xiaoguo.domain.entity;
+package cn.xiaoguo.domain.entity.type;
 
 
 import lombok.AllArgsConstructor;
@@ -16,15 +16,15 @@ import com.baomidou.mybatisplus.annotation.TableName;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("video_type")
-public class VideoType  {
+@TableName("video_type_region")
+public class VideoRegionType {
 @TableId
-    private Long typeId;
+    private Integer id;
 
 //分类名
-    private String typeName;
+    private String typeRegionName;
 //父id(没有为0)
-    private Long typePid;
+    private Integer typePid;
 //状态（0为正常1为禁用）
     private Integer status;
 

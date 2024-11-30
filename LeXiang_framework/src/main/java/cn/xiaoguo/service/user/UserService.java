@@ -1,7 +1,7 @@
-package cn.xiaoguo.service;
+package cn.xiaoguo.service.user;
 
 import cn.xiaoguo.domain.entity.ResponseResult;
-import cn.xiaoguo.domain.entity.User;
+import cn.xiaoguo.domain.entity.user.User;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -20,5 +20,10 @@ public interface UserService {
     ResponseResult logout();
 
     ResponseResult userRegister(User user);
+
+    ResponseResult selectOne();
+
+    ResponseResult updateUser(Long id,User user);
+
 }
 

@@ -1,6 +1,6 @@
 package cn.xiaoguo.mapper;
 
-import cn.xiaoguo.domain.entity.VideoType;
+import cn.xiaoguo.domain.entity.type.VideoRegionType;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,6 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2024-06-24 10:57:28
  */
 @Mapper
-public interface VideoTypeMapper extends BaseMapper<VideoType> {
+public interface VideoTypeRegionMapper extends BaseMapper<VideoRegionType> {
 
 }

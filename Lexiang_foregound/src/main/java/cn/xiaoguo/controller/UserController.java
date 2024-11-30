@@ -1,10 +1,10 @@
 package cn.xiaoguo.controller;
 
 import cn.xiaoguo.domain.entity.ResponseResult;
-import cn.xiaoguo.domain.entity.User;
+import cn.xiaoguo.domain.entity.user.User;
 import cn.xiaoguo.enums.AppHttpCodeEnum;
 import cn.xiaoguo.exception.SystemException;
-import cn.xiaoguo.service.UserService;
+import cn.xiaoguo.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -45,5 +45,16 @@ public class UserController {
     public ResponseResult UserRegister(@RequestBody User user){
         return userService.userRegister(user);
     }
+
+    @GetMapping("/selectOne")
+    public ResponseResult selectOne() {
+        return userService.selectOne();
+    }
+
+    @PutMapping("/updateUser/{id}")
+    public ResponseResult updateUser(@RequestBody User user,@PathVariable("id") Long id){
+        return userService.updateUser(id,user);
+    }
+
 
 }

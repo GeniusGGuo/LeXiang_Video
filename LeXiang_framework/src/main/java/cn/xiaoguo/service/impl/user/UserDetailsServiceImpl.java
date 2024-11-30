@@ -1,7 +1,7 @@
-package cn.xiaoguo.service.impl;
+package cn.xiaoguo.service.impl.user;
 
-import cn.xiaoguo.domain.entity.LoginUser;
-import cn.xiaoguo.domain.entity.User;
+import cn.xiaoguo.domain.entity.user.LoginUser;
+import cn.xiaoguo.domain.entity.user.User;
 import cn.xiaoguo.mapper.UserMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;

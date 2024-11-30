@@ -14,9 +14,25 @@ public class SystemConstants {
      */
     public static final String VIDEO_TYPE_STATUS = "0";
     /**
-     *  分类状态正常
+     *  视频顶层id
      */
     public static final String VIDEO_PARENT_ID = "0";
+    /**
+     *  虎牙资源交换机
+     */
+    public static final String EXCHANGE_DIRECT_HY = "exchange.direct.hy.drawling";
+    /**
+     *  虎牙资源路由键
+     */
+    public static final String ROUTING_KEY_HY = "hy.drawling";
+    /**
+     *  虎牙资源队列名
+     */
+    public static final String QUEUE_NAME_HY = "queue.hy.drawling";
 
+    /**
+     *  虎牙资源影片信息采集url
+     */
 
+    public static final String HY_MOVIE_URL = "https://www.huyazy.com/index.php/vod/detail/id/%d.html?ac=detail";
 }

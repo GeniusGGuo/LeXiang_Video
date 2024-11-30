@@ -1,15 +1,16 @@
-package cn.xiaoguo.service.impl;
+package cn.xiaoguo.service.impl.user;
 
-import cn.xiaoguo.domain.entity.LoginUser;
+import cn.xiaoguo.domain.entity.user.LoginUser;
 import cn.xiaoguo.domain.entity.ResponseResult;
-import cn.xiaoguo.domain.entity.User;
+import cn.xiaoguo.domain.entity.user.User;
 import cn.xiaoguo.domain.vo.LoginUserVo;
 import cn.xiaoguo.enums.AppHttpCodeEnum;
 import cn.xiaoguo.exception.SystemException;
 import cn.xiaoguo.mapper.UserMapper;
-import cn.xiaoguo.service.UserService;
+import cn.xiaoguo.service.user.UserService;
 import cn.xiaoguo.utils.JwtUtil;
 import cn.xiaoguo.utils.RedisCache;
+import cn.xiaoguo.utils.UuidUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
 import java.util.Objects;
+import java.util.UUID;
 
 /**
  * @ClassName UserServiceImpl
@@ -35,7 +36,6 @@ import java.util.Objects;
 
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
-
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
@@ -65,7 +65,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public ResponseResult logout() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         LoginUser user = (LoginUser) authentication.getPrincipal();
-        Long id = user.getUser().getId();
+        String id = user.getUser().getId();
         redisCache.deleteObject("login:"+id);
         return new ResponseResult(200,"退出成功");
     }
@@ -90,9 +90,49 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         String encode = passwordEncoder.encode(user.getPassword());
         user.setPassword(encode);
+        user.setId(UuidUtil.getUUID());
         save(user);
         return ResponseResult.okResult();
     }
+
+    @Override
+    public ResponseResult selectOne() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        LoginUser loginUser = (LoginUser) authentication.getPrincipal();
+        User user = getById(loginUser.getUser().getId());
+        return ResponseResult.okResult(user);
+    }
+
+    @Override
+    public ResponseResult updateUser(Long id,User user) {
+        User user1 = getById(id);
+        if(user1.getUserName().equals(user.getUserName())){
+            user1.setUserName(user.getUserName());
+        }else if (userNameEXist(user.getUserName())) {
+            throw new SystemException(AppHttpCodeEnum.USERNAME_EXIST);
+        }else {
+            user1.setUserName(user.getUserName());
+        }
+        if (user1.getNickName().equals(user.getNickName())){
+            user1.setNickName(user.getNickName());
+        }else if(nickNameEXist(user.getNickName())){
+            throw new SystemException(AppHttpCodeEnum.NICKNAME_EXIST);
+        }else {
+            user1.setNickName(user.getNickName());
+        }
+        if (user1.getEmail().equals(user.getEmail())){
+            user1.setEmail(user.getEmail());
+        }else if (emailExist(user.getEmail())){
+            throw new SystemException(AppHttpCodeEnum.EMAIL_EXIST);
+        }else {
+            user1.setEmail(user.getEmail());
+        }
+
+        user1.setSex(user.getSex());
+        updateById(user1);
+        return ResponseResult.okResult();
+    }
+
 
     private boolean userNameEXist(String userName) {
         LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();

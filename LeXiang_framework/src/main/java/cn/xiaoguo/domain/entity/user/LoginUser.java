@@ -1,4 +1,4 @@
-package cn.xiaoguo.domain.entity;
+package cn.xiaoguo.domain.entity.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

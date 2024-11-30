@@ -1,7 +1,6 @@
 package cn.xiaoguo.filter;
 
-import cn.xiaoguo.domain.entity.LoginUser;
-import cn.xiaoguo.domain.entity.User;
+import cn.xiaoguo.domain.entity.user.LoginUser;
 import cn.xiaoguo.utils.JwtUtil;
 import cn.xiaoguo.utils.RedisCache;
 import io.jsonwebtoken.Claims;

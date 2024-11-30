@@ -1,6 +1,6 @@
 package cn.xiaoguo.domain.vo;
 
-import cn.xiaoguo.domain.entity.User;
+import cn.xiaoguo.domain.entity.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
